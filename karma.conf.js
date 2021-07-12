@@ -1,6 +1,5 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
-const {customLaunchers} = require('./karma-custom-launchers');
 
 module.exports = function (config) {
   config.set({
@@ -9,7 +8,6 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-firefox-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma'),
@@ -29,10 +27,12 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
     singleRun: false,
-    customLaunchers: customLaunchers,
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
   });
 
-  if (process.env['TRAVIS']) {
-    config.browsers = ['ChromeHeadlessCI', 'FirefoxHeadless']
-  }
 };
