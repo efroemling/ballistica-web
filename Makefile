@@ -2,6 +2,9 @@ serve:
 	ng serve
 
 install:
+	rm -rf dist/ballistica-web
+	mkdir -p dist/ballistica-web
 	ng build --configuration production
-	rsync -av dist/material-angular-io/ ubuntu@ballistica.net:/var/www/www.ballistica.net.test/
+	@echo Pushing live...
+	rsync -a dist/ballistica-web/ ubuntu@ballistica.net:/var/www/www.ballistica.net.test/
 	echo SUCCESS!

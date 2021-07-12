@@ -6,23 +6,23 @@ declare -A PROJECT_ID
 
 # Firebase project ids
 PROJECT_ID["stable", "dev"]="material2-docs-dev"
-PROJECT_ID["stable", "prod"]="material-angular-io"
+PROJECT_ID["stable", "prod"]="ballistica-web"
 PROJECT_ID["stable", "beta"]="beta-angular-material-io"
 
 PROJECT_ID["v5", "dev"]="material-docs-dev-v5"
-PROJECT_ID["v5", "prod"]="v5-material-angular-io"
+PROJECT_ID["v5", "prod"]="v5-ballistica-web"
 
 PROJECT_ID["v6", "dev"]="material-docs-dev-v6"
-PROJECT_ID["v6", "prod"]="v6-material-angular-io"
+PROJECT_ID["v6", "prod"]="v6-ballistica-web"
 
 PROJECT_ID["v7", "dev"]="material-docs-dev-v7"
-PROJECT_ID["v7", "prod"]="v7-material-angular-io"
+PROJECT_ID["v7", "prod"]="v7-ballistica-web"
 
-PROJECT_ID["v8", "prod"]="v8-material-angular-io"
+PROJECT_ID["v8", "prod"]="v8-ballistica-web"
 
-PROJECT_ID["v9", "prod"]="v9-material-angular-io"
+PROJECT_ID["v9", "prod"]="v9-ballistica-web"
 
-PROJECT_ID["v10", "prod"]="v10-material-angular-io"
+PROJECT_ID["v10", "prod"]="v10-ballistica-web"
 
 PROJECT_ID["next", "prod"]="beta-angular-material-io"
 

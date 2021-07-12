@@ -2,9 +2,9 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "defaultProject": "material-angular-io",
+  "defaultProject": "ballistica-web",
   "projects": {
-    "material-angular-io": {
+    "ballistica-web": {
       "root": "",
       "projectType": "application",
       "schematics": {
@@ -17,7 +17,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "sourceMap": true,
-            "outputPath": "dist/material-angular-io",
+            "outputPath": "dist/ballistica-web",
             "index": "src/index.html",
             "polyfills": "src/polyfills.ts",
             "main": "src/main.ts",
@@ -111,18 +111,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "material-angular-io:build"
+            "browserTarget": "ballistica-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "material-angular-io:build:production"
+              "browserTarget": "ballistica-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "material-angular-io:build"
+            "browserTarget": "ballistica-web:build"
           }
         },
         "test": {
@@ -195,11 +195,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "material-angular-io:serve"
+            "devServerTarget": "ballistica-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "material-angular-io:serve:production"
+              "devServerTarget": "ballistica-web:serve:production"
             }
           }
         }
