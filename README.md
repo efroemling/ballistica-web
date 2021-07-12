@@ -1,45 +1,16 @@
-# Angular Components Docs Site
+# Ballistica Web Front-End
 
-This is the repository for the [Angular Components documentation site](https://material.angular.io/).
+This will hopefully mutate into a useful toolset for Ballistica related functionality (wrangling mods, cloud hosting, asset packages, etc). For now though it is largely just me learning Angular/Material.
 
-Versions of this site are also available for
-- [v5](https://v5.material.angular.io/)
-- [v6](https://v6.material.angular.io/)
-- [v7](https://v7.material.angular.io/)
-- [v8](https://v8.material.angular.io/)
-- [v9](https://v9.material.angular.io/)
-- [v10](https://v10.material.angular.io/)
-- [v11](https://v11.material.angular.io/)
-- [v12](https://material.angular.io/)
+This was shamelessly spun off from the [Source Code](https://github.com/angular/material.angular.io) for the [Angular Material Documentation Site](https://material.angular.io/).
 
-## Contributing
-
-Please open bugs against the Angular Material and CDK components, directives, documentation
-contents, API docs, and demos in the
-[Angular Components repo](https://github.com/angular/components/issues).
-
-Please only open issues with the documentation site itself (not the content) in
-[this repo](https://github.com/angular/material.angular.io/issues). This includes issues like the
-navigation not working properly, examples or documentation not being presented in an accessible way,
-issues with rendering or layout of the documentation pages, etc.
-
-### Where does the content come from?
-
-The guides, examples, and docs content repo
-[angular/material2-docs-content](https://github.com/angular/material2-docs-content) contains the
-documentation content and examples. They are generated from:
-- [Angular Material and CDK Guides](https://github.com/angular/components/tree/master/guides)
-- [Material components, services, and directives](https://github.com/angular/components/tree/master/src/material)
-- [CDK components, services, and directives](https://github.com/angular/components/tree/master/src/cdk)
 
 ## Development Setup
 
-1. Make sure you have [NodeJS LTS](https://nodejs.org) installed
+1. Make sure you have [NodeJS](https://nodejs.org) installed
 1. Make sure you have [Yarn](https://yarnpkg.com) installed
 1. Install the project's dependencies
    - `yarn install`
-1. Update to the latest version of the docs-content and examples
-   - `yarn build:content`
 
 ## Development Server
 
@@ -57,16 +28,3 @@ Run `yarn prod-build` to build the project.
 
 Run `yarn e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `yarn start`.
-
-## Deployment instructions
-
-```
-> yarn install
-> yarn upgrade @angular/components-examples
-
-# Development
-> yarn publish-dev
-
-# Production
-> yarn publish-prod
-```
