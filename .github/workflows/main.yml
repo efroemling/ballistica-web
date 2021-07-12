@@ -14,4 +14,8 @@ jobs:
         run: yarn install
 
       - name: Test
-        run: yarn test --no-watch --no-progress
+        run: make test
+
+      - name: Lint
+        run: make lint
+        

@@ -31,8 +31,4 @@ module.exports = function (config) {
     customLaunchers: customLaunchers,
   });
 
-  if (process.env['GITHUB_ACTION']) {
-    config.browsers = ['ChromeHeadlessCI']
-  }
-
 };
