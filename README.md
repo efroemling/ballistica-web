@@ -2,7 +2,7 @@
 
 This will hopefully mutate into a useful toolset for Ballistica related functionality (wrangling mods, cloud hosting, asset packages, etc). For now though it is largely just me learning Angular/Material.
 
-This was shamelessly spun off from the [Angular Components documentation site](https://material.angular.io/).
+This was shamelessly spun off from the [Source Code](https://github.com/angular/material.angular.io) for the [Angular Material Documentation Site](https://material.angular.io/).
 
 
 ## Development Setup
