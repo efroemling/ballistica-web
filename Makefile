@@ -1,5 +1,8 @@
+# Some high-level shortcuts and formulas
+# (yes I know these should probably live in package.json scripts)
+
 serve:
-	ng serve
+	npm start
 
 install:
 	rm -rf dist/ballistica-web
@@ -10,7 +13,7 @@ install:
 	echo SUCCESS!
 
 test:
-	ng test --no-watch --no-progress --browsers ChromeHeadlessCI
+	npm test --no-watch --no-progress --browsers ChromeHeadlessCI
 
 lint:
 	ng lint

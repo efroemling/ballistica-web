@@ -14,8 +14,8 @@ jobs:
         run: yarn install
 
       - name: Test
-        run: make test
+        run: npm run test:github-actions
 
       - name: Lint
-        run: make lint
-        
+        run: npm run lint
+
