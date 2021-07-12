@@ -8,11 +8,15 @@
       "files": ["*.ts"],
       "plugins": ["ban"],
       "parserOptions": {
+        "ecmaVersion": 2017,
         "project": [
           "tsconfig.json",
           "e2e/tsconfig.json"
         ],
         "createDefaultProgram": true
+      },
+      "env": {
+        "es6": true
       },
       "extends": [
         "plugin:@angular-eslint/ng-cli-compat",
