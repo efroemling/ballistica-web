@@ -1,4 +1,4 @@
-<footer class="docs-footer"
+<footer *ngIf="shouldShowTestStuff()" class="docs-footer"
         [class.is-next-version]="isNextVersion">
   <div class="docs-footer-list">
     <div class="docs-footer-logo">

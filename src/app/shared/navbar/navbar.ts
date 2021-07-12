@@ -11,8 +11,9 @@ import {StyleManager} from '../style-manager';
 import {HttpClientModule} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {NavigationFocusService} from '../navigation-focus/navigation-focus.service';
+import {environment} from '../../../environments/environment';
 
-const SECTIONS_KEYS = Object.keys(SECTIONS);
+const SECTIONS_KEYS = environment.production ? [] : Object.keys(SECTIONS);
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,8 @@ const SECTIONS_KEYS = Object.keys(SECTIONS);
   styleUrls: ['./navbar.scss']
 })
 export class NavBar implements OnDestroy {
+  gitHubUrl = 'https://github.com/efroemling/ballistica';
+
   private subscriptions = new Subscription();
   isNextVersion = location.hostname.startsWith('next.material.angular.io');
   skipLinkHref: string | null | undefined;
@@ -40,6 +43,11 @@ export class NavBar implements OnDestroy {
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }
+
+  shouldShowTestStuff(): boolean {
+    return !environment.production;
+  }
+
 }
 
 @NgModule({
@@ -56,4 +64,5 @@ export class NavBar implements OnDestroy {
   declarations: [NavBar],
   providers: [StyleManager, ThemeStorage]
 })
-export class NavBarModule {}
+export class NavBarModule {
+}

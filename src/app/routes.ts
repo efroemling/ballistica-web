@@ -34,5 +34,7 @@ export const MATERIAL_DOCS_ROUTES: Routes = [
     loadChildren: () =>
       import('./pages/component-sidenav/component-sidenav').then(m => m.ComponentSidenavModule)
   },
+  {path: 'wiki', redirectTo: 'https://github.com/efroemling/ballistica'},
+
   {path: '**', redirectTo: '/404'},
 ];

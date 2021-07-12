@@ -2,17 +2,17 @@
         [class.is-next-version]="isNextVersion" aria-label="Get started" id="homepage-header">
   <div class="docs-header-section">
     <div class="docs-header-headline">
-      <h1 class="mat-h1">BallisticaWeb</h1>
-      <h2> Nifty web front-end for Ballistica</h2>
+      <h1 class="mat-h1">Ballistica</h1>
+      <h2> The BombSquad engine (this web front-end under construction)</h2>
     </div>
     <div class="docs-header-start">
-      <a mat-raised-button class="docs-button" routerLink="/guide/getting-started">Get started</a>
+      <a mat-raised-button class="docs-button" href="https://github.com/efroemling/ballistica">Get started</a>
     </div>
   </div>
 </header>
 
 <main class="docs-homepage-promo">
-  <div class="docs-homepage-row docs-introduction">
+  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-row docs-introduction">
     <div class="docs-homepage-row-column">
       <h2>High quality</h2>
       <p>
@@ -40,9 +40,9 @@
     </div>
   </div>
 
-  <mat-divider></mat-divider>
+  <mat-divider *ngIf="shouldShowTestStuff()"></mat-divider>
 
-  <div class="docs-homepage-featured-components docs-homepage-carousel-row">
+  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-featured-components docs-homepage-carousel-row">
     <div class="docs-homepage-header">
       <h2>Featured components</h2>
 
@@ -52,7 +52,8 @@
       </a>
     </div>
     <app-carousel [aria-label]="'Featured components'">
-      <a *ngFor="let comp of getTopComponents()" carousel-item class="carousel-item docs-featured-components-carousel-item"
+      <a *ngFor="let comp of getTopComponents()" carousel-item
+         class="carousel-item docs-featured-components-carousel-item"
          routerLink="/components/{{comp}}">
         <div class="docs-homepage-img-container">
           <img alt="" src="../../../assets/screenshots/{{comp}}.scene.png" role="presentation">
@@ -62,9 +63,9 @@
     </app-carousel>
   </div>
 
-  <mat-divider></mat-divider>
+  <mat-divider *ngIf="shouldShowTestStuff()"></mat-divider>
 
-  <div class="docs-homepage-guides docs-homepage-carousel-row">
+  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-guides docs-homepage-carousel-row">
     <div class="docs-homepage-header">
       <h2>Guides</h2>
 
@@ -74,7 +75,8 @@
       </a>
     </div>
     <app-carousel [aria-label]="'Guides'">
-      <a carousel-item class="carousel-item docs-homepage-guides-carousel-item" *ngFor="let guide of guideItems.getAllItems()"
+      <a carousel-item class="carousel-item docs-homepage-guides-carousel-item"
+         *ngFor="let guide of guideItems.getAllItems()"
          routerLink='/guide/{{guide.id}}'>
         <mat-card class="docs-homepage-guides-card">
           <mat-card-title>{{guide.name}}</mat-card-title>
@@ -86,8 +88,7 @@
       </a>
     </app-carousel>
   </div>
-
 </main>
 
-<app-support></app-support>
+<app-support *ngIf="shouldShowTestStuff()"></app-support>
 <app-footer></app-footer>

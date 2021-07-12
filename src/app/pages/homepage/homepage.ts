@@ -12,6 +12,7 @@ import {GuideItems} from '../../shared/guide-items/guide-items';
 import {CommonModule} from '@angular/common';
 import {CarouselModule} from '../../shared/carousel/carousel-module';
 import {Support} from '../../shared/support/support';
+import {environment} from '../../../environments/environment';
 
 const TOP_COMPONENTS = ['datepicker', 'input', 'slide-toggle', 'slider', 'button'];
 
@@ -34,6 +35,11 @@ export class Homepage implements OnInit {
   getTopComponents(): string[] {
     return TOP_COMPONENTS;
   }
+
+  shouldShowTestStuff(): boolean {
+    return !environment.production;
+  }
+
 }
 
 const routes: Routes = [{path: '', component: Homepage}];
