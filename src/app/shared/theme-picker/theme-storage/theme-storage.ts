@@ -1,6 +1,6 @@
 import {Injectable, EventEmitter} from '@angular/core';
 
-export interface DocsSiteTheme {
+export interface BallisticaSiteTheme {
   name: string;
   displayName?: string;
   accent: string;
@@ -12,11 +12,11 @@ export interface DocsSiteTheme {
 
 @Injectable()
 export class ThemeStorage {
-  static storageKey = 'docs-theme-storage-current-name';
+  static storageKey = 'ballistica-theme-storage-current-name';
 
-  onThemeUpdate: EventEmitter<DocsSiteTheme> = new EventEmitter<DocsSiteTheme>();
+  onThemeUpdate: EventEmitter<BallisticaSiteTheme> = new EventEmitter<BallisticaSiteTheme>();
 
-  storeTheme(theme: DocsSiteTheme) {
+  storeTheme(theme: BallisticaSiteTheme) {
     try {
       window.localStorage[ThemeStorage.storageKey] = theme.name;
     } catch { }

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 
-const STORAGE_KEY = 'docs-cookies';
+const STORAGE_KEY = 'ballistica-cookies';
 
 @Component({
   selector: 'app-cookie-popup',

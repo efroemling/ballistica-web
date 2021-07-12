@@ -18,7 +18,7 @@
 @use './styles/svg-theme';
 @use './styles/tables-theme';
 
-// Styles for the docs app that are based on the current theme.
+// Styles for the app that are based on the current theme.
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);

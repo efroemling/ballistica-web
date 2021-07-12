@@ -1,8 +1,8 @@
-import {ThemeStorage, DocsSiteTheme} from './theme-storage';
+import {ThemeStorage, BallisticaSiteTheme} from './theme-storage';
 
 
 const testStorageKey = ThemeStorage.storageKey;
-const testTheme: DocsSiteTheme = {
+const testTheme: BallisticaSiteTheme = {
   primary: '#000000',
   accent: '#ffffff',
   name: 'test-theme'

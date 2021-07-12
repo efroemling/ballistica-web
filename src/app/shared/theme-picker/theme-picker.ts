@@ -7,7 +7,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {StyleManager} from '../style-manager';
-import {DocsSiteTheme, ThemeStorage} from './theme-storage/theme-storage';
+import {BallisticaSiteTheme, ThemeStorage} from './theme-storage/theme-storage';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
@@ -28,10 +28,10 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
 })
 export class ThemePicker implements OnInit, OnDestroy {
   private _queryParamSubscription = Subscription.EMPTY;
-  currentTheme: DocsSiteTheme | undefined;
+  currentTheme: BallisticaSiteTheme | undefined;
 
   // The below colors need to align with the themes defined in theme-picker.scss
-  themes: DocsSiteTheme[] = [
+  themes: BallisticaSiteTheme[] = [
     {
       primary: '#673AB7',
       accent: '#FFC107',
@@ -45,7 +45,6 @@ export class ThemePicker implements OnInit, OnDestroy {
       displayName: 'Indigo & Pink',
       name: 'indigo-pink',
       isDark: false,
-      isDefault: true,
     },
     {
       primary: '#E91E63',
@@ -60,6 +59,7 @@ export class ThemePicker implements OnInit, OnDestroy {
       displayName: 'Deep Purple & Green',
       name: 'purple-green',
       isDark: true,
+      isDefault: true,
     },
   ];
 
