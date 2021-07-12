@@ -26,7 +26,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadlessLocal'],
+    browsers: ['Chrome', 'ChromeHeadlessLocal'],
     singleRun: false,
     customLaunchers: customLaunchers,
   });
@@ -34,4 +34,5 @@ module.exports = function (config) {
   if (process.env['GITHUB_ACTION']) {
     config.browsers = ['ChromeHeadlessCI']
   }
+
 };
