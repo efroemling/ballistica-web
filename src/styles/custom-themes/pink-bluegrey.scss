@@ -1,0 +1,11 @@
+@use '~@angular/material' as mat;
+@use '../../app-theme';
+@use '../../highlightjs/material-dark';
+
+// Define the dark theme.
+$_primary: mat.define-palette(mat.$pink-palette);
+$_accent:  mat.define-palette(mat.$blue-grey-palette);
+$_theme: mat.define-dark-theme($_primary, $_accent);
+
+@include mat.all-component-themes($_theme);
+@include app-theme.theme($_theme);

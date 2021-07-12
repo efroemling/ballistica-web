@@ -1,0 +1,12 @@
+<div class="popup" *ngIf="!hasAccepted">
+  This site uses cookies for purposes such as logins.
+
+  <div class="buttons">
+<!--    <a-->
+<!--      href="https://policies.google.com/technologies/cookies"-->
+<!--      mat-button-->
+<!--      target="_blank"-->
+<!--      rel="noopener">More details</a>-->
+    <button mat-button color="primary" (click)="accept()">Ok, Got it</button>
+  </div>
+</div>
