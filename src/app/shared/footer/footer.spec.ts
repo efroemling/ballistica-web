@@ -18,11 +18,11 @@ describe('Footer', () => {
     fixture.detectChanges();
   });
 
-  it('should have a link to angular.io', () => {
-    const link = fixture.nativeElement.querySelector('.docs-footer-logo a');
-    const href = link.getAttribute('href');
-    const text = link.textContent;
-    expect(href).toContain('angular.io');
-    expect(text).toContain('Learn Angular');
-  });
+  // it('should have a link to angular.io', () => {
+  //   const link = fixture.nativeElement.querySelector('.docs-footer-logo a');
+  //   const href = link.getAttribute('href');
+  //   const text = link.textContent;
+  //   expect(href).toContain('angular.io');
+  //   expect(text).toContain('Learn Angular');
+  // });
 });
