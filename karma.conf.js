@@ -32,6 +32,6 @@ module.exports = function (config) {
   });
 
   if (process.env['GITHUB_ACTION']) {
-    config.browsers = ['ChromeHeadlessCI']
+    config.browsers = ['ChromeHeadlessCI2']
   }
 };
