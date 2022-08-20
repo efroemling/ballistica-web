@@ -8,7 +8,6 @@ import {NavigationFocusModule} from '../../shared/navigation-focus/navigation-fo
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
-import {GuideItems} from '../../shared/guide-items/guide-items';
 import {CommonModule} from '@angular/common';
 import {CarouselModule} from '../../shared/carousel/carousel-module';
 import {Support} from '../../shared/support/support';
@@ -25,7 +24,7 @@ export class Homepage implements OnInit {
   @HostBinding('class.main-content') readonly mainContentClass = true;
   isNextVersion = location.hostname.startsWith('next.material.angular.io');
 
-  constructor(public _componentPageTitle: ComponentPageTitle, public guideItems: GuideItems) {
+  constructor(public _componentPageTitle: ComponentPageTitle) {
   }
 
   ngOnInit(): void {
@@ -53,7 +52,7 @@ const routes: Routes = [{path: '', component: Homepage}];
     CarouselModule],
   exports: [Homepage],
   declarations: [Homepage, Support],
-  providers: [GuideItems]
+  providers: []
 })
 export class HomepageModule {
 }

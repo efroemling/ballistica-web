@@ -7,7 +7,7 @@ import {Title} from '@angular/platform-browser';
 @Injectable({providedIn: 'root'})
 export class ComponentPageTitle {
   _title = '';
-  _originalTitle = 'Angular Material UI component library';
+  _originalTitle = 'Ballistica Game Engine';
 
   get title(): string {
     return this._title;
@@ -16,7 +16,7 @@ export class ComponentPageTitle {
   set title(title: string) {
     this._title = title;
     if (title !== '') {
-      title = `${title} | Angular Material`;
+      title = `${title} | Ballistica`;
     } else {
       title = this._originalTitle;
     }

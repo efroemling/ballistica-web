@@ -74,19 +74,6 @@
         <mat-icon>chevron_right</mat-icon>
       </a>
     </div>
-    <app-carousel [aria-label]="'Guides'">
-      <a carousel-item class="carousel-item docs-homepage-guides-carousel-item"
-         *ngFor="let guide of guideItems.getAllItems()"
-         routerLink='/guide/{{guide.id}}'>
-        <mat-card class="docs-homepage-guides-card">
-          <mat-card-title>{{guide.name}}</mat-card-title>
-          <div class="docs-homepage-guides-card-divider"></div>
-          <mat-card-content class="docs-component-category-list-card-summary">
-            {{guide.overview}}
-          </mat-card-content>
-        </mat-card>
-      </a>
-    </app-carousel>
   </div>
 </main>
 

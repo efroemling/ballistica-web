@@ -183,13 +183,6 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/cdk-experimental@^12.1.1":
-  version "12.1.1"
-  resolved "https://registry.yarnpkg.com/@angular/cdk-experimental/-/cdk-experimental-12.1.1.tgz#5d760cefc1e7a633c2ca78f20941f840a4239bc5"
-  integrity sha512-troV5cZ5Ss5B9Grv61hvtOwqTHQmdA2/Kzm+9mrPIHNEimpFEfG5lATfGA2C3QFk9Cs0yloiXu39oEJYEqyuBA==
-  dependencies:
-    tslib "^2.2.0"
-
 "@angular/cdk@^14.1.3":
   version "14.1.3"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-14.1.3.tgz#eed05c35d2aa3e2f4f8aff787fdfb3fd10a7119e"
@@ -262,19 +255,18 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/flex-layout@^14.0.0-beta.40":
+  version "14.0.0-beta.40"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-14.0.0-beta.40.tgz#ec3c09389f5ae277d09aebcb2a0c8bf7c1329967"
+  integrity sha512-lYi2BKovNk5u2wmj/AMIMqfUzCBEt99Wu/Gfa+1mUIlw3voKCmIsV2XYBhX4adRdD+dRagY3Opger43JR7PXEw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/forms@^14.1.3":
   version "14.1.3"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-14.1.3.tgz#b89a7431711dcc826f6dbd7555561ca0803babfe"
   integrity sha512-gCN3my9KRp6BLlBGh4uw8NukUPKCl+quroMO2lkvsodF0MA42uhKHO+EImrpLxNMK7lfENIERwthb4mh4G4cFQ==
   dependencies:
-    tslib "^2.3.0"
-
-"@angular/google-maps@^14.1.3":
-  version "14.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/google-maps/-/google-maps-14.1.3.tgz#69e8af09f864663d25718f076198a1d2da2ec46f"
-  integrity sha512-GRT3kW8hNuyvd5Bjr7AwaznAIzez39wIWMklctdYBF52fEDlDo6Bo1Rc3DZ130ctDr4k2NDb8pKh8ftV0G59Hg==
-  dependencies:
-    "@types/google.maps" "^3.45.6"
     tslib "^2.3.0"
 
 "@angular/localize@^14.1.3":
@@ -319,14 +311,6 @@
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-14.1.3.tgz#701a1418e8768e9f5d5f5fc44943b638104670d4"
   integrity sha512-LjWQBaeaGkgFy814booGmQV2eELDynzACGAZUwrpWmdHKo9p9GCi9dYttYXspNDmxoipXAzYvVPSABlMfhuQ+g==
   dependencies:
-    tslib "^2.3.0"
-
-"@angular/youtube-player@^14.1.3":
-  version "14.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/youtube-player/-/youtube-player-14.1.3.tgz#faedb5fc0c67a9b514968267f142f2d9a1ad5a9e"
-  integrity sha512-e9IoD5I0gU8iliXPjz/DACgsEA/TngKEIz4VKj3+lPDLU30ruwg+Uc3g4DBOrDZ0RvHIZ2rjKmTs9MgkkvvaUQ==
-  dependencies:
-    "@types/youtube" "^0.0.42"
     tslib "^2.3.0"
 
 "@apidevtools/json-schema-ref-parser@^9.0.3":
@@ -2703,11 +2687,6 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/google.maps@^3.45.6":
-  version "3.49.2"
-  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.49.2.tgz#9640491ec3aa96c9de1466894117ce81c02588df"
-  integrity sha512-ZO1qWciukqED9qcUNW7OaPXWnTlT+tO3WcYkmudZyQW2BqD7TlMFRrdqSCoqfwKhERCwBA5A/YZt/g5A3BqgLQ==
-
 "@types/http-proxy@^1.17.8":
   version "1.17.9"
   resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.9.tgz#7f0e7931343761efde1e2bf48c40f02f3f75705a"
@@ -2860,11 +2839,6 @@
   integrity sha512-A1b8SU4D10uoPjwb0lnHmmu8wZhR9d+9o2PKBQT2jU5YPTKsxac6M2qGAdY7VcL+dHHhARVUDmeg0rOrcd9EjA==
   dependencies:
     "@types/node" "*"
-
-"@types/youtube@^0.0.42":
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/@types/youtube/-/youtube-0.0.42.tgz#c3568e3e82e04cbd00cac3b66564ebcd21fd9d90"
-  integrity sha512-Nqo3HMPFPcNyZ7HNFZJjpH+N4yXqpxBItG+41e7nL9zednovMRZMXWj36CctSznbBcbj6ucvkJDo5iZ8SKqLIw==
 
 "@typescript-eslint/eslint-plugin@^5.29.0":
   version "5.33.1"

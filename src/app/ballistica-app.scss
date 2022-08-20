@@ -1,6 +1,6 @@
 @use '../styles/constants';
 
-material-docs-app {
+ballistica-app {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -14,20 +14,20 @@ app-navbar {
   z-index: 2;
 }
 
-material-docs-app > app-component-sidenav {
+ballistica-app > app-component-sidenav {
   flex: 1;
 }
 
-material-docs-app > router-outlet + .main-content,
-material-docs-app > router-outlet + app-component-sidenav {
+ballistica-app > router-outlet + .main-content,
+ballistica-app > router-outlet + app-component-sidenav {
   margin-top: 56px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: constants.$extra-small-breakpoint-width) {
-  material-docs-app > router-outlet + .main-content,
-  material-docs-app > router-outlet + app-component-sidenav {
+  ballistica-app > router-outlet + .main-content,
+  ballistica-app > router-outlet + app-component-sidenav {
     margin-top: 92px;
     overflow-y: visible;
   }

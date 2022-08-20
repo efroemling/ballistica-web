@@ -5,12 +5,12 @@ import {Subscription} from 'rxjs';
 import {map, pairwise, startWith} from 'rxjs/operators';
 
 @Component({
-  selector: 'material-docs-app',
-  templateUrl: './material-docs-app.html',
-  styleUrls: ['./material-docs-app.scss'],
+  selector: 'ballistica-app',
+  templateUrl: './ballistica-app.html',
+  styleUrls: ['./ballistica-app.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class MaterialDocsApp implements OnDestroy {
+export class BallisticaApp implements OnDestroy {
   private subscriptions = new Subscription();
 
   constructor(navigationFocusService: NavigationFocusService) {

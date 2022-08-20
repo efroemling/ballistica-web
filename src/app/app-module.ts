@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
-import {MaterialDocsApp} from './material-docs-app';
+import {BallisticaApp} from './ballistica-app';
 import {MATERIAL_DOCS_ROUTES} from './routes';
 import {NavBarModule} from './shared/navbar';
 import {CookiePopupModule} from './shared/cookie-popup/cookie-popup-module';
@@ -21,8 +21,8 @@ import {CookiePopupModule} from './shared/cookie-popup/cookie-popup-module';
     NavBarModule,
     CookiePopupModule,
   ],
-  declarations: [MaterialDocsApp],
+  declarations: [BallisticaApp],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
-  bootstrap: [MaterialDocsApp],
+  bootstrap: [BallisticaApp],
 })
 export class AppModule {}
