@@ -3,6 +3,7 @@ mat-toolbar{
   border-radius: 3px;
   a{
     text-decoration: none;
+    font-size:medium;
     font-weight: 400;
     cursor: pointer;
   }
@@ -12,7 +13,7 @@ mat-toolbar{
       height: 35px;
       padding-top: 9px;
     }
-    a{ padding-top: 10px;}
+    a{ padding-top: 10px; font-size: larger;}
   }
   .navigation-items{
     list-style-type: none;

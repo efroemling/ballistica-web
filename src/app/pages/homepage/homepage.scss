@@ -11,7 +11,6 @@ $margin-promotion-sections-small: 15px;
 .docs-header-background::before {
   content: '';
   position: absolute;
-  background-image: url('../../../assets/img/homepage/angular-white-transparent.svg');
   background-size: 600px;
   top: 0;
   bottom: 0;
@@ -84,7 +83,11 @@ $margin-promotion-sections-small: 15px;
     vertical-align: middle;
   }
 }
-
+.docs-introduction{
+    line-height: 1.6;
+    word-spacing: 3px;
+    padding: 20px 0px;
+}
 .carousel-item {
   width: 48%;
 

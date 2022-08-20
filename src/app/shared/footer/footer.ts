@@ -1,6 +1,8 @@
 import {Component, NgModule} from '@angular/core';
 import {materialVersion} from '../version/version';
+import {CommonModule} from '@angular/common';
 import {environment} from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-footer',
@@ -20,6 +22,7 @@ export class Footer {
 
 
 @NgModule({
+  imports:[CommonModule],
   exports: [Footer],
   declarations: [Footer],
 })

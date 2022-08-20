@@ -1,36 +1,3 @@
-<!-- TODO: figure out if the <nav> should go inside of a <header> element. -->
-<!-- <nav class="docs-navbar-header" aria-label="Top Toolbar"
-     [class.is-next-version]="isNextVersion">
-  <div class="skip-link-wrapper" [class.cdk-visually-hidden]="skipLinkHidden" *ngIf="skipLinkHref">
-    <a mat-raised-button [href]="skipLinkHref" (focus)="skipLinkHidden = false" (blur)="skipLinkHidden = true" color="accent">
-      Skip to main content
-    </a>
-  </div>
-  <a mat-button class="docs-button" routerLink="/" aria-label="Ballistica">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/angular-white-transparent.svg"
-         alt="ballistica">
-    <span>Ballistica</span>
-  </a>
-  <a mat-button *ngIf="shouldShowTestStuff()" class="docs-navbar-hide-small docs-button" routerLink="guides" routerLinkActive="docs-navbar-header-item-selected">Guides</a>
-  <div class="flex-spacer"></div> -->
-<!--  <version-picker></version-picker>-->
-  <!-- <theme-picker *ngIf="shouldShowTestStuff()"></theme-picker>
-  <a mat-button class="docs-button docs-navbar-hide-small" href="{{gitHubUrl}}"
-     aria-label="GitHub Repository">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
-         alt="github">
-    GitHub
-  </a>
-  <a mat-icon-button class="docs-button docs-navbar-show-small"
-     href="{{gitHubUrl}}" aria-label="GitHub Repository">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
-         alt="github">
-  </a>
-</nav> -->
-
 <mat-toolbar color="primary" class="ba-toolbar">
   <div fxHide.gt-xs>
       <button mat-icon-button (click)="onToggleSidenav()">
@@ -43,6 +10,9 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
       <ul fxLayout  class="navigation-items">
+          <li>
+            <a routerLink="/login" routerLinkActive="router-link-active" >Login</a>
+          </li>
           <li>
               <a href="https://docs.ballistica.net/api7/">Docs</a>
           </li>

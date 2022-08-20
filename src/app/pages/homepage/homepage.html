@@ -3,69 +3,48 @@
   <div class="docs-header-section">
     <div class="docs-header-headline">
       <h1 class="mat-h1">Ballistica</h1>
-      <h2> The BombSquad engine (this web front-end under construction)</h2>
+      <h2> The BombSquad engine</h2>
     </div>
     <div class="docs-header-start">
-      <a mat-raised-button class="docs-button" href="https://github.com/efroemling/ballistica">Get started</a>
+      <a mat-raised-button class="docs-button" href="https://github.com/efroemling/ballistica">Login to Web Tools</a>
     </div>
   </div>
 </header>
 
 <main class="docs-homepage-promo">
-  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-row docs-introduction">
-    <div class="docs-homepage-row-column">
-      <h2>High quality</h2>
-      <p>
-        Internationalized and accessible components for everyone. Well tested to ensure performance and reliability.
-      </p>
-      <p>Straightforward APIs with consistent cross platform behaviour.</p>
-    </div>
-    <div class="docs-homepage-row-column">
-      <h2>Versatile</h2>
-      <p>
-        Provide tools that help developers build their own custom components with common interaction patterns.
-      </p>
-      <p>
-        Customizable within the bounds of the Material Design specification.
-      </p>
-    </div>
-    <div class="docs-homepage-row-column">
-      <h2>Frictionless</h2>
-      <p>
-        Built by the Angular team to integrate seamlessly with Angular.
-      </p>
-      <p>
-        Start from scratch or drop into your existing applications.
-      </p>
-    </div>
+  <div *ngIf="shouldShowTestStuff()" class="docs-introduction">
+    Its goal is to support creating one particular type of experience: 'physics based multiplayer action on small diorama-like environments built from real-world objects'. If you've got something you'd like to create that can fit within that box (as BombSquad itself does), give Ballistica a look.
+   <br><br>
+   <p>Ballistica is built on a C++ core for performance-sensitive code with a Python layer for high level game/app logic. This Python layer is designed to be mucked with. Users can override core game functionality, write their own mini games, or anything else they can dream up, either by directly accessing files on disk or by working through an integrated web-based editor. It can be a fun way to learn Python without the danger of getting useful work done.</p>
   </div>
 
   <mat-divider *ngIf="shouldShowTestStuff()"></mat-divider>
 
-  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-featured-components docs-homepage-carousel-row">
+  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-featured-components docs-homepage-carousel-row" fxHide.xs>
     <div class="docs-homepage-header">
-      <h2>Featured components</h2>
+      <h2>Recent Updates</h2>
 
-      <a class="docs-link" routerLink="/components">
-        View all components
+      <a class="docs-link" href="https://github.com/efroemling/ballistica/wiki">
+        More
         <mat-icon>chevron_right</mat-icon>
       </a>
     </div>
     <app-carousel [aria-label]="'Featured components'">
-      <a *ngFor="let comp of getTopComponents()" carousel-item
+      <a *ngFor="let comp of getNews()" carousel-item
          class="carousel-item docs-featured-components-carousel-item"
-         routerLink="/components/{{comp}}">
+         routerLink="/github">
         <div class="docs-homepage-img-container">
-          <img alt="" src="../../../assets/screenshots/{{comp}}.scene.png" role="presentation">
         </div>
-        {{(comp[0].toUpperCase() + comp.slice(1)).replace('-', ' ')}}
+        <h2>{{comp['title']}}</h2>
+        <h5>{{comp['date']}}</h5>
+        <p>{{comp['desc'].substring(0,400)}}</p>
       </a>
     </app-carousel>
   </div>
 
   <mat-divider *ngIf="shouldShowTestStuff()"></mat-divider>
 
-  <div *ngIf="shouldShowTestStuff()" class="docs-homepage-guides docs-homepage-carousel-row">
+  <!-- <div *ngIf="shouldShowTestStuff()" class="docs-homepage-guides docs-homepage-carousel-row">
     <div class="docs-homepage-header">
       <h2>Guides</h2>
 
@@ -74,8 +53,9 @@
         <mat-icon>chevron_right</mat-icon>
       </a>
     </div>
-  </div>
+  </div> -->
 </main>
 
 <app-support *ngIf="shouldShowTestStuff()"></app-support>
+
 <app-footer></app-footer>
