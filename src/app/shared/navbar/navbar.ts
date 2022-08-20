@@ -5,15 +5,12 @@ import {MatMenuModule} from '@angular/material/menu';
 import {RouterModule} from '@angular/router';
 import {ThemePickerModule} from '../theme-picker';
 // import {VersionPickerModule} from '../version-picker';
-import {SECTIONS} from '../documentation-items/documentation-items';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
 import {StyleManager} from '../style-manager';
 import {HttpClientModule} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {NavigationFocusService} from '../navigation-focus/navigation-focus.service';
 import {environment} from '../../../environments/environment';
-
-const SECTIONS_KEYS = environment.production ? [] : Object.keys(SECTIONS);
 
 @Component({
   selector: 'app-navbar',
@@ -30,14 +27,6 @@ export class NavBar implements OnDestroy {
 
   constructor(private navigationFocusService: NavigationFocusService) {
     setTimeout(() => this.skipLinkHref = this.navigationFocusService.getSkipLinkHref(), 100);
-  }
-
-  get sections() {
-    return SECTIONS;
-  }
-
-  get sectionKeys() {
-    return SECTIONS_KEYS;
   }
 
   ngOnDestroy() {
