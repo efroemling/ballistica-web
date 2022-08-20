@@ -1,8 +1,11 @@
-import {Component, NgModule, OnDestroy} from '@angular/core';
+import {Component, EventEmitter, NgModule, OnDestroy, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {RouterModule} from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import {ThemePickerModule} from '../theme-picker';
 // import {VersionPickerModule} from '../version-picker';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
@@ -18,6 +21,9 @@ import {environment} from '../../../environments/environment';
   styleUrls: ['./navbar.scss']
 })
 export class NavBar implements OnDestroy {
+
+  @Output() public sidenavToggle = new EventEmitter();
+
   gitHubUrl = 'https://github.com/efroemling/ballistica';
 
   private subscriptions = new Subscription();
@@ -37,17 +43,18 @@ export class NavBar implements OnDestroy {
     return !environment.production;
   }
 
+  onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+  };
+
 }
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatMenuModule,
-    RouterModule,
-    ThemePickerModule,
-    // VersionPickerModule,
+    MatIconModule,
+    MatToolbarModule,
+    FlexLayoutModule
   ],
   exports: [NavBar],
   declarations: [NavBar],

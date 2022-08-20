@@ -11,17 +11,17 @@
   app-navbar {
     color: mat.get-color-from-palette($primary, default-contrast);
 
-    .docs-navbar, .docs-navbar-header {
+    .ba-toolbar {
       background: mat.get-color-from-palette($primary);
-
+      a{
+        color:mat.get-color-from-palette($primary, default-contrast);
+      }
       & a:hover, & a:focus {
-        background: rgba(0, 0, 0, 0.3);
-        color: mat.get-color-from-palette($accent, 200);
+        color: mat.get-color-from-palette($primary, 200);
       }
-
-      .docs-navbar-header-item-selected {
-        background: rgba(0, 0, 0, 0.2);
-      }
+    }
+    button {
+      background-color:  mat.get-color-from-palette($background,200);
     }
   }
 }

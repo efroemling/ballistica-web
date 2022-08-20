@@ -31,3 +31,10 @@ $_theme: mat.define-dark-theme($_primary, $_accent);
 //
 //@include mat.all-component-themes($_theme);
 //@include app-theme.theme($_theme);
+.mat-drawer:not(.mat-drawer-side) {
+  position: fixed;
+}
+
+.mat-drawer-backdrop {
+  position: fixed !important;
+}
