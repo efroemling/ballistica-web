@@ -1,0 +1,35 @@
+<main>
+  <mat-card>
+    <mat-card-title>Login V2 account</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+        </p>
+
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+        <mat-checkbox formControlName="rememberme">Remember Me</mat-checkbox>
+        <div class="button">
+          <button type="submit" mat-button>Login</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</main>
+<div class="breaker"></div>
+<div class="info">
+  Note: This site uses BombSquad 'V2' accounts (also called Ballistica accounts). These accounts are beginning to replace legacy accounts starting in BombSquad 1.7, and they add support for upcoming features such as matchmaking, friend chat, and cloud-based modding. Existing login types such as Google Play will gain support for V2 features over time, but for now you can create and use new V2 accounts through this site.
+</div>
+

@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+  flex-wrap: wrap;
+}
+
+.breaker{
+  width: 100%;
+}
+
+.info{
+  padding: 50px 0px;
+  width: 70%;
+  text-align: center;
+  font-size: small;
+}
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-checkbox {
+  float: left;
+  padding-top: 7px;
+}
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .info{
+    width: 90%;
+  }
+}
