@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, NgModule } from '@angular/core
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -26,7 +27,8 @@ export class SidenavList implements OnInit {
   imports: [
     MatListModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    RouterModule,
   ],
   exports: [SidenavList],
   declarations: [SidenavList],

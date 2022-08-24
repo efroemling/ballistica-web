@@ -6,21 +6,21 @@
       <h2> The BombSquad engine</h2>
     </div>
     <div class="header-start">
-      <a mat-raised-button class="button" href="https://github.com/efroemling/ballistica">Login to Web Tools</a>
+      <a mat-raised-button class="button" routerLink="/auth/login">Login to Web Tools</a>
     </div>
   </div>
 </header>
 
 <main class="homepage-promo">
-  <div *ngIf="shouldShowTestStuff()" class="introduction">
+  <div class="introduction">
     Its goal is to support creating one particular type of experience: 'physics based multiplayer action on small diorama-like environments built from real-world objects'. If you've got something you'd like to create that can fit within that box (as BombSquad itself does), give Ballistica a look.
    <br><br>
    <p>Ballistica is built on a C++ core for performance-sensitive code with a Python layer for high level game/app logic. This Python layer is designed to be mucked with. Users can override core game functionality, write their own mini games, or anything else they can dream up, either by directly accessing files on disk or by working through an integrated web-based editor. It can be a fun way to learn Python without the danger of getting useful work done.</p>
   </div>
 
-  <mat-divider *ngIf="shouldShowTestStuff()"></mat-divider>
+  <mat-divider ></mat-divider>
 
-  <div *ngIf="shouldShowTestStuff()" class="homepage-featured-components homepage-carousel-row" fxHide.xs>
+  <div class="homepage-featured-components homepage-carousel-row" fxHide.xs>
     <div class="homepage-header">
       <h2>Recent Updates</h2>
 
@@ -42,7 +42,7 @@
     </app-carousel>
   </div>
 
-  <mat-divider *ngIf="shouldShowTestStuff()"></mat-divider>
+  <mat-divider></mat-divider>
 
   <!-- <div *ngIf="shouldShowTestStuff()" class="homepage-guides homepage-carousel-row">
     <div class="homepage-header">
@@ -56,6 +56,6 @@
   </div> -->
 </main>
 
-<app-support *ngIf="shouldShowTestStuff()"></app-support>
+<app-support></app-support>
 
 <app-footer></app-footer>

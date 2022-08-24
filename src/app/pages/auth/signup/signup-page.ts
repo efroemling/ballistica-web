@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ComponentPageTitle } from '../../page-title/page-title';
 
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
-  selector: 'app-loginpage',
-  templateUrl: './login-page.html',
+  selector: 'app-signuppage',
+  templateUrl: './signup-page.html',
   styleUrls: ['../auth.scss']
 })
-export class Loginpage implements OnInit {
+export class Signuppage implements OnInit {
   error: string | null = null;
   forgotpassword: boolean = false;
   constructor(public _componentPageTitle: ComponentPageTitle) {
@@ -16,18 +16,18 @@ export class Loginpage implements OnInit {
   public form: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
-    rememberme: new FormControl(''),
+    repeatpassword: new FormControl(''),
   });
 
   ngOnInit(): void {
-    this._componentPageTitle.title = 'Login';
+    this._componentPageTitle.title = 'Signup';
   }
   submit() {
     if (this.form.valid) {
     }
   }
   onForgotPassword() {
-     this.forgotpassword = !this.forgotpassword;
+     this.forgotpassword = true;
   }
 
 }

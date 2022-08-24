@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {RouterModule} from '@angular/router';
 // import {VersionPickerModule} from '../version-picker';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
 import {StyleManager} from '../style-manager';
@@ -47,6 +48,7 @@ export class NavBar implements OnDestroy {
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     MatIconModule,
     MatToolbarModule,
     FlexLayoutModule

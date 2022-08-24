@@ -7,9 +7,8 @@ export const MATERIAL_DOCS_ROUTES: Routes = [
     loadChildren: () => import('./pages/homepage').then(m => m.HomepageModule)
   },
   {
-    path:'auth/login',
-    pathMatch:'full',
-    loadChildren: ()=> import('./pages/auth/login/login-page').then(m =>m.LoginpageModule)
+    path:'auth',
+    loadChildren: ()=> import('./pages/auth/auth').then(m =>m.AuthModule)
   },
   {
     path: '404',

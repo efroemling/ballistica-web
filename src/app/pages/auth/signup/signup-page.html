@@ -1,0 +1,48 @@
+<main>
+  <mat-card>
+    <mat-card-title>Create a V2 Account</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field >
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field >
+            <input type="password" matInput placeholder="Repeat Password" formControlName="repeatpassword">
+          </mat-form-field>
+        </p>
+
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+        <div class="button">
+          <button type="submit" mat-button>Submit</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</main>
+<div class="breaker"></div>
+<div class="more">
+  <div class="forgetpassword" routerLink="/auth/login"><a>Signin instead</a></div><br>
+</div>
+<div class="signup-info">
+    <h5>By creating this account, you agree to the following terms:</h5>
+    <ul> <li>You are a human creating this account for your own personal use</li> <li>Your account may be suspended or terminated at any time for reasons  including (but not limited to):  <ul>   <li>Attempts to gain competitive advantages through hacks, cheats, or other exploits</li>   <li>Toxic behavior towards other players</li>   <li>Lack of use (mainly applies to fresh accounts; accounts       with any significant progress will not be auto-deleted       without significant advance warning)</li>   <li>Illegal activity such as sharing of copyrighted files without the owner's consent</li>   <li>Any other reason deemed justified by the developer</li>  </ul> </li></ul>
+
+    <h5>Account Privacy Policy</h5>
+   <p >Your email address and any other personal information will never be shared with third parties without your explicit consent
+    Purely game-related information such as your account tag and in-game statistics and achievements will be visible publicly
+    </p>
+</div>
+
