@@ -12,6 +12,7 @@ import {MATERIAL_DOCS_ROUTES} from './routes';
 import {NavBarModule} from './shared/navbar';
 import {SidenavListModule} from './shared/navbar/sidenav-list/sidenav-list';
 import {CookiePopupModule} from './shared/cookie-popup/cookie-popup-module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {CookiePopupModule} from './shared/cookie-popup/cookie-popup-module';
     CookiePopupModule,
     FlexLayoutModule,
     MatSidenavModule,
-    SidenavListModule
+    SidenavListModule,
+    HttpClientModule
   ],
   declarations: [BallisticaApp,Layout],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],

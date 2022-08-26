@@ -10,6 +10,7 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
       <ul fxLayout  class="navigation-items">
+          <li *ngIf="shouldShowTestStuff()"><theme-picker></theme-picker></li>
           <li>
             <a routerLink="auth/login" routerLinkActive="router-link-active">Login</a>
           </li>

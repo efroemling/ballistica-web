@@ -10,6 +10,7 @@ import {StyleManager} from '../style-manager';
 import {Subscription} from 'rxjs';
 import {NavigationFocusService} from '../navigation-focus/navigation-focus.service';
 import {environment} from '../../../environments/environment';
+import { ThemePickerModule } from '../theme-picker';
 
 @Component({
   selector: 'app-navbar',
@@ -51,7 +52,8 @@ export class NavBar implements OnDestroy {
     RouterModule,
     MatIconModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ThemePickerModule
   ],
   exports: [NavBar],
   declarations: [NavBar],

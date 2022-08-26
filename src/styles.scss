@@ -9,28 +9,39 @@
 // Ericf note:
 // This duplicates code in our custom themes; perhaps we can unify somehow?
 
+
 // Define the dark theme.
-$_primary: mat.define-palette(mat.$deep-purple-palette, 600, 50, 900, 300);
-$_accent:  mat.define-palette(mat.$green-palette, A200, A100, A400);
-$_theme: mat.define-dark-theme($_primary, $_accent);
+$_dark-primary: mat.define-palette(mat.$deep-purple-palette, 600, 50, 900, 300);
+$_dark-accent:  mat.define-palette(mat.$green-palette, A200, A100, A400);
+$_dark-theme: mat.define-dark-theme($_dark-primary, $_dark-accent);
+
+// Define the light theme.
+$_light-primary: mat.define-palette(mat.$indigo-palette);
+$_light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$_light-theme: mat.define-light-theme($_light-primary, $_light-accent);
 
 // Include material core styles.
 // Ericf note: why is this included here but not in custom-themes?
 @include mat.core();
 
-@include mat.all-component-themes($_theme);
-@include app-theme.theme($_theme);
+// Default , dark theme  for old browsers who dont know prefers-color-scheme , they actually living in dark ;)
+@include mat.all-component-themes($_dark-theme);
+@include app-theme.theme($_dark-theme);
 
-//// Define the light theme.
-//$_primary: mat.define-palette(mat.$indigo-palette);
-//$_accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-//$_theme: mat.define-light-theme($_primary, $_accent);
-//
-//// Include material core styles.
-//@include mat.core();
-//
-//@include mat.all-component-themes($_theme);
-//@include app-theme.theme($_theme);
+// Now check if browser/host OS have any preference.
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  @include mat.all-component-themes($_dark-theme);
+  @include app-theme.theme($_dark-theme);
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  @include mat.all-component-themes($_light-theme);
+  @include app-theme.theme($_light-theme);
+}
+
+// heck to avoid scrolling of side-navbar
 .mat-drawer:not(.mat-drawer-side) {
   position: fixed;
 }
