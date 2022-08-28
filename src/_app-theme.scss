@@ -3,6 +3,7 @@
 @use 'sass:map';
 @use './app/pages/homepage/homepage-theme';
 @use './app/pages/auth/auth-theme';
+@use './app/pages/account/account-theme';
 @use './app/pages/not-found/not-found-theme';
 @use './app/shared/carousel/carousel-theme';
 @use './app/shared/footer/footer-theme';
@@ -59,6 +60,7 @@
   @include footer-theme.theme($theme);
   @include homepage-theme.theme($theme);
   @include auth-theme.theme($theme);
+  @include account-theme.theme($theme);
   @include not-found-theme.theme($theme);
   @include navbar-theme.theme($theme);
   @include cookie-popup-theme.theme($theme);

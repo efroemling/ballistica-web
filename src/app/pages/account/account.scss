@@ -1,0 +1,66 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 100px 0px;
+  flex-wrap: wrap;
+}
+h1,h3{
+  margin-left: 15px;
+}
+
+mat-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.row{
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 30px;
+  .element{
+    span{
+      font-size: small;
+      opacity: 0.4;
+    }
+
+  }
+}
+
+.right{
+  text-align: right;
+}
+
+table {
+  width: 100%;
+}
+mat-table{
+  mat-cell{
+    font-size: small;
+  }
+  .f-s{
+    flex-grow: 0.6;
+  }
+  .f-m{
+    flex-grow: 0.8;
+    padding-right: 0px;
+  }
+  .f-l{
+    flex-grow: 1.2;
+  }
+}
+
+::ng-deep.mat-dialog-container{
+  mat-form-field{
+    width: 100%;
+  }
+  .mat-dialog-actions{
+    justify-content: center;
+  }
+}

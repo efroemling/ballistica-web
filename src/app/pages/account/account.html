@@ -1,0 +1,75 @@
+<main>
+  <h1>Account Settings</h1>
+  <mat-card>
+      <div class="row">
+        <label for="email">Email</label>
+        <span>smoothy@email.com</span>
+      </div>
+      <div class="row">
+        <label for="password">Password</label>
+        <span><a (click)="onChangePassword()" (keyup)="null">(change password)</a></span>
+      </div>
+      <div class="row">
+        <div class="element">
+          <label for="Tag">Tag</label><br>
+          <span>The globally-unique name others see for your account.</span>
+        </div>
+        <div class="element right">
+          <label for="tag">HeySmoothy</label><br>
+          <span><a href="">change</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="element">
+          <label for="ID">ID</label><br>
+          <span>The globally unique id for your account. <br> This will never change.</span>
+        </div>
+        <span>a-4</span>
+      </div>
+      <div class="row">
+        <div class="element">
+          <label for="mfa">Security</label><br>
+          <span>Keep your account extra secure by sending verification <br> emails when logging in via email/password.</span>
+        </div>
+        <mat-checkbox color='primary'>Enable 2 FA</mat-checkbox>
+      </div>
+      <div class="row">
+        <div></div>
+        <button mat-stroked-button color="warn"> Delete Account</button>
+      </div>
+  </mat-card>
+
+  <h3>Active Sessions</h3>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Index Column -->
+      <!-- <ng-container matColumnDef="num">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.no}} </mat-cell>
+      </ng-container> -->
+
+      <!-- Type Column -->
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef [ngClass]="'f-l'"> Type </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'f-l'" > {{element.type}} </mat-cell>
+      </ng-container>
+
+      <!-- Location Column -->
+      <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef [ngClass]="'f-l'"> Location </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'f-l'"> {{element.location}} </mat-cell>
+      </ng-container>
+
+      <!-- Active Column -->
+      <ng-container matColumnDef="active">
+        <mat-header-cell *matHeaderCellDef [ngClass]="'f-s'"> Active </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'f-s'"> {{element.active}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="extra">
+        <mat-header-cell *matHeaderCellDef [ngClass]="'f-m'"> Extra </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'f-m'">  <a> Logout </a> </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</main>
