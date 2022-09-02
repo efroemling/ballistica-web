@@ -10,7 +10,9 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
       <ul fxLayout  class="navigation-items">
-          <li *ngIf="shouldShowTestStuff()"><theme-picker></theme-picker></li>
+
+          <li *ngIf="shouldShowTestStuff()">
+            <theme-picker></theme-picker></li>
           <li>
             <a routerLink="auth/login" routerLinkActive="router-link-active">Login</a>
           </li>
@@ -24,6 +26,15 @@
                     src="../../../assets/img/homepage/github-circle-white-transparent.svg"
                     alt="github">
             </a>
+          </li>
+          <li>
+            <div class="account">
+              <button [matMenuTriggerFor]="menu">v2.HeySmoothy</button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Account Settings</button>
+                <button mat-menu-item>Logout</button>
+              </mat-menu>
+            </div>
           </li>
       </ul>
   </div>

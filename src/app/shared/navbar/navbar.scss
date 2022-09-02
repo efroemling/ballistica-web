@@ -25,6 +25,13 @@ mat-toolbar{
     img{
       padding-top: 8px;
     }
+    .account{
+      font-size: small;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 0px 4px;
+      cursor: pointer;
+    }
   }
   button {
     all:unset;

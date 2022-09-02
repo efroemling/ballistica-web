@@ -17,6 +17,11 @@ export const MATERIAL_DOCS_ROUTES: Routes = [
     loadChildren: ()=> import('./pages/auth/auth').then(m =>m.AuthModule)
   },
   {
+    path:'tools',
+    pathMatch:'full',
+    loadChildren: ()=> import('./pages/dashboard/dashboard').then(m=>m.DashboardModule)
+  },
+  {
     path: '404',
     loadChildren: () => import('./pages/not-found').then(m => m.NotFoundModule)
   },
