@@ -22,6 +22,11 @@ export const MATERIAL_DOCS_ROUTES: Routes = [
     loadChildren: ()=> import('./pages/dashboard/dashboard').then(m=>m.DashboardModule)
   },
   {
+    path:'tools/workspace',
+    pathMatch:'prefix',
+    loadChildren: ()=> import('./pages/workspace/workspace').then(m=>m.WorkspaceModule)
+  },
+  {
     path: '404',
     loadChildren: () => import('./pages/not-found').then(m => m.NotFoundModule)
   },

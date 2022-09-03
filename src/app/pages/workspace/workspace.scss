@@ -1,0 +1,48 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  .info{
+    text-align: center;
+    p{
+      font-size: smaller;
+    }
+  }
+}
+
+.my-workspace{
+  margin-top: 86px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.syncing-options{
+  margin: 0px 20px;
+}
+mat-card{
+  width: 100%;
+  margin-right: 9px;
+  mat-card-title{
+    font-size: smaller;
+    button{
+      float: right;
+    }
+  }
+}
+/**
+  * Rules for when the device is detected to be a small screen.
+  */
+  @media (max-width: 720px) {
+    .row {
+      flex-direction: column;
+      .syncing-options{
+        margin: 20px 0px;
+      }
+    }
+
+
+  }
