@@ -23,6 +23,7 @@
 .syncing-options{
   margin: 0px 20px;
 }
+
 mat-card{
   width: 100%;
   margin-right: 9px;
@@ -33,16 +34,139 @@ mat-card{
     }
   }
 }
+
+//  Workspace  ============================
+.directory{
+  flex-grow: 0.5;
+}
+.code-editor{
+  flex-grow: 2;
+}
+.console{
+  flex-grow: 1;
+}
+.section{
+  border: 0.2px solid #565656;
+  margin: 5px;
+  height: 87vh;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+
+// File Explorer
+.tree-invisible {
+  display: none;
+}
+
+.tree ul,
+.tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+/*
+ * This padding sets alignment of the nested nodes.
+ */
+.tree .mat-nested-tree-node div[role=group] {
+  padding-left: 30px;
+}
+
+/*
+ * Padding for leaf nodes.
+ * Leaf nodes need to have padding so as to align with other non-leaf nodes
+ * under the same parent.
+ */
+.tree div[role=group] > .mat-tree-node {
+  padding-left: 40px;
+}
+
+// console
+
+.app-ace-editor{
+  height: 83vh;
+}
+
+.options{
+  display: flex;
+  .empty{
+    flex-grow: 1;
+  }
+  mat-icon{
+    margin-left: 19px;
+  }
+}
+.shell{
+  height: 190px;
+  width: 100%;
+}
+.console{
+  display: flex;
+  width: 70px;
+  flex-direction: column;
+  .logs{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 55vh;
+  }
+}
+.execute-btn{
+  text-align: center;
+  padding: 8px;
+  background-color: #46dd46;
+}
+.mob-options{
+  display: none;
+}
 /**
   * Rules for when the device is detected to be a small screen.
   */
-  @media (max-width: 720px) {
-    .row {
-      flex-direction: column;
-      .syncing-options{
-        margin: 20px 0px;
-      }
+@media (max-width: 720px) {
+  .row{
+    flex-direction: column;
+    .syncing-options{
+      margin: 20px 0px;
     }
-
-
   }
+  .mob-options{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 6;
+    width: 94%;
+    text-align: center;
+    margin: 10px;
+    div{
+      flex-grow: 1;
+      padding: 9px;
+    }
+  }
+}
+
+
+@media (max-width: 720px) {
+  .mob-hide{
+    display: none;
+  }
+  .mob-show{
+    display: block;
+  }
+}
+
+@media (max-width: 720px) {
+  .section{
+      padding: 0px;
+      border: 0px;
+  }
+  .logs{
+     height: 56vh;
+  }
+  .console{
+    width: 98%;
+  }
+  .empty-block{
+    height: 27px;
+  }
+}

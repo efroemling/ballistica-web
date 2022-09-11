@@ -4,6 +4,7 @@
 @use './app/pages/homepage/homepage-theme';
 @use './app/pages/auth/auth-theme';
 @use './app/pages/account/account-theme';
+@use './app/pages/workspace/workspace-theme';
 @use './app/pages/not-found/not-found-theme';
 @use './app/shared/carousel/carousel-theme';
 @use './app/shared/footer/footer-theme';
@@ -61,6 +62,7 @@
   @include homepage-theme.theme($theme);
   @include auth-theme.theme($theme);
   @include account-theme.theme($theme);
+  @include workspace-theme.theme($theme);
   @include not-found-theme.theme($theme);
   @include navbar-theme.theme($theme);
   @include cookie-popup-theme.theme($theme);

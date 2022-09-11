@@ -45,6 +45,7 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "ace-builds": "^1.10.0",
     "material-components-web": "12.0.0-canary.b52196498.0",
     "moment": "^2.29.1",
     "rimraf": "^3.0.2",
