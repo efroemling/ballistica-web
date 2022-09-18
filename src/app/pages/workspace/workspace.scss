@@ -11,6 +11,9 @@
   }
 }
 
+mat-icon{
+  cursor: pointer;
+}
 .my-workspace{
   margin-top: 86px;
 }
@@ -20,20 +23,36 @@
   flex-wrap: wrap;
 }
 
+.list{
+  display: flex;
+  flex-direction: column;
+  mat-card{
+    margin-bottom: 15px;
+    mat-card-title{
+      font-size: smaller;
+      button{
+        float: right;
+      }
+    }
+  }
+}
 .syncing-options{
   margin: 0px 20px;
 }
 
-mat-card{
-  width: 100%;
-  margin-right: 9px;
-  mat-card-title{
-    font-size: smaller;
-    button{
-      float: right;
+.workspace-list{
+  mat-card{
+    width: 100%;
+    margin-right: 9px;
+    mat-card-title{
+      font-size: smaller;
+      button{
+        float: right;
+      }
     }
   }
 }
+
 
 //  Workspace  ============================
 .directory{
@@ -42,7 +61,7 @@ mat-card{
 .code-editor{
   flex-grow: 2;
 }
-.console{
+.fg-1{
   flex-grow: 1;
 }
 .section{
@@ -53,7 +72,10 @@ mat-card{
   overflow-y: auto;
 }
 
-
+.upload-area{
+  padding:4.2em;
+  border: 1px solid;
+}
 // File Explorer
 .tree-invisible {
   display: none;

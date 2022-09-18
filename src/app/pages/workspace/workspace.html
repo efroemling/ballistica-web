@@ -5,8 +5,9 @@
     <div class="options">
        <strong>Files</strong>
       <div class="empty"></div>
-      <mat-icon> insert_drive_file</mat-icon>
-      <mat-icon>create_new_folder</mat-icon>
+      <mat-icon (click)="onFileUpload()">cloud_upload</mat-icon>
+      <mat-icon (click)="onCreateNewFile()"> insert_drive_file</mat-icon>
+      <mat-icon (click)="onCreateNewFolder()" >create_new_folder</mat-icon>
     </div>
 
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree">
@@ -15,6 +16,8 @@
         This padding value depends on the mat-icon-button width. -->
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
          <mat-icon>description</mat-icon> {{node.name}}
+         <div class="fg-1"></div>
+         <button  mat-icon-button><mat-icon>more_horiz</mat-icon></button>
       </mat-tree-node>
       <!-- This is the tree node template for expandable nodes -->
       <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
@@ -26,6 +29,8 @@
               </mat-icon>
             </button>
             {{node.name}}
+            <div class="fg-1"></div>
+            <button  mat-icon-button><mat-icon>more_horiz</mat-icon></button>
           </div>
           <!-- There is inline padding applied to this div using styles.
               This padding value depends on the mat-icon-button width.  -->
@@ -49,7 +54,7 @@
 
      </div>
   </div>
-  <div class="console section" [ngClass]="activeMode.toString()==='2'? 'mob-show' :'mob-hide'">
+  <div class="console fg-1 section" [ngClass]="activeMode.toString()==='2'? 'mob-show' :'mob-hide'">
       <strong>Console</strong>
       <div class="logs">
         <p *ngFor="let log of logs">{{log}}</p>

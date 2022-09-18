@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, ElementRef, NgModule, OnInit, ViewChild } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// eslint-disable-next-line max-len
+import { AfterViewInit, Component, ElementRef, Inject, NgModule, OnInit, ViewChild } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import {MatButtonModule} from '@angular/material/button';
@@ -13,7 +15,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTreeModule, MatTreeNestedDataSource} from '@angular/material/tree';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import * as ace from 'ace-builds';
-
+import {MatDialog, MatDialogModule, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import { DragDropFileUploadDirective } from './dragDropUpload.directive';
 interface DirNode {
   name: string;
   children?: DirNode[];
@@ -68,7 +73,7 @@ export class Workspace implements OnInit, AfterViewInit {
   @ViewChild('console')
   private console!: ElementRef<HTMLElement>;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.dataSource.data = TREE_DATA;
   }
 
@@ -93,6 +98,18 @@ export class Workspace implements OnInit, AfterViewInit {
     this.aceConsole.setTheme('ace/theme/twilight');
     this.aceConsole.session.setMode('ace/mode/python');
     this.aceConsole.setOption('showGutter', false);
+  }
+
+  onCreateNewFile(): void {
+    const dialogRef = this.dialog.open(NewFileDialog,{ data:{ dialogType: 'file'}});
+  }
+
+  onCreateNewFolder(): void {
+    const dialogRef = this.dialog.open(NewFileDialog,{ data:{ dialogType: 'folder'}});
+  }
+
+  onFileUpload(): void {
+    const dialogRef = this.dialog.open(NewFileDialog,{ data:{ dialogType: 'upload'}});
   }
 
   onSave(): void {
@@ -127,6 +144,52 @@ export class WorkspaceList implements OnInit {
   }
 }
 
+@Component({
+  selector:'newfile-dialog.html',
+  templateUrl:'./newfile-dialog.html',
+  styleUrls:['./workspace.scss']
+})
+export class NewFileDialog {
+    fileType: string | undefined;
+    fileName: string | undefined;
+    dialogType: string;
+
+    files: any[] = [];
+    constructor(@Inject(MAT_DIALOG_DATA) data: { dialogType: string }) {
+      this.dialogType = data.dialogType;
+    }
+
+    onFileTypeSelect(fileType: string) {
+      this.fileType = fileType;
+    }
+
+    onFileDropped($event: any) {
+      for (const item of $event) {
+        this.files.push(item);
+      }
+      this.uploadFiles();
+    }
+
+    /**
+     * handle file from browsing
+     */
+    fileBrowseHandler(files: any) {
+      this.prepareFilesList(files);
+    }
+
+    prepareFilesList(files: Array<any>) {
+      for (const item of files) {
+        this.files.push(item);
+      }
+      this.uploadFiles();
+    }
+
+    uploadFiles() {
+      // call service to upload all the files
+      this.files = [];
+    }
+}
+
 const routes: Routes = [
   {
     path : '',
@@ -148,10 +211,12 @@ const routes: Routes = [
     MatGridListModule,
     MatCardModule,
     MatIconModule,
-    MatTreeModule
+    MatTreeModule,
+    MatDialogModule,
+    MatListModule,
+    MatInputModule
   ],
-  declarations:[WorkspaceList, Workspace]
+  declarations:[WorkspaceList, Workspace , NewFileDialog, DragDropFileUploadDirective]
 })
 export class WorkspaceModule {
-
 }

@@ -1,0 +1,83 @@
+<h2 mat-dialog-title *ngIf="dialogType === 'file'">Create New File</h2>
+<h2 mat-dialog-title *ngIf="dialogType === 'folder'">Create New Folder</h2>
+<h2 mat-dialog-title *ngIf="dialogType === 'upload'">Upload New File(s)</h2>
+<mat-dialog-content class="mat-typography">
+<div class="list" *ngIf="!fileType && dialogType === 'file' ">
+  <mat-card class="card" (click)="onFileTypeSelect('empty')">
+    <mat-card-title>Empty File
+      <button mat-icon-button >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-card-title>
+    <mat-card-subtitle>Complete blank file , to write script from scratch.</mat-card-subtitle>
+  </mat-card>
+  <mat-card class="card" (click)="onFileTypeSelect('empty')">
+    <mat-card-title>Plugin
+      <button mat-icon-button >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-card-title>
+    <mat-card-subtitle>Ballistica plugins can modify the game in arbitrary ways.
+      They can also be enabled and disabled by the user.</mat-card-subtitle>
+  </mat-card>
+  <mat-card class="card" (click)="onFileTypeSelect('empty')">
+    <mat-card-title>Ninja Fight
+      <button mat-icon-button >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-card-title>
+    <mat-card-subtitle>Custom version of the 'Ninja Fight' co-op game.
+      It will be added to the 'Practice' co-op section.</mat-card-subtitle>
+  </mat-card>
+  <mat-card class="card" (click)="onFileTypeSelect('empty')">
+    <mat-card-title>Onslaught
+      <button mat-icon-button >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-card-title>
+    <mat-card-subtitle>Custom version of the 'Onslaughtt' co-op game.
+      It will be added to the 'Practice' co-op section.</mat-card-subtitle>
+  </mat-card>
+  <mat-card class="card" (click)="onFileTypeSelect('empty')">
+    <mat-card-title>Runaround
+      <button mat-icon-button >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-card-title>
+    <mat-card-subtitle>Custom version of the 'Runaround' co-op game.
+      It will be added to the 'Practice' co-op section.</mat-card-subtitle>
+  </mat-card>
+  <mat-card class="card" (click)="onFileTypeSelect('empty')">
+    <mat-card-title>Death Match
+      <button mat-icon-button >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </mat-card-title>
+    <mat-card-subtitle>Custom version of the 'Death Match' co-op game.
+      It will be added to the 'Practice' co-op section.</mat-card-subtitle>
+  </mat-card>
+</div>
+
+<div class="filename" *ngIf="!!fileType || dialogType !== 'upload'">
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label *ngIf="dialogType === 'file'">File Name</mat-label>
+    <mat-label *ngIf="dialogType === 'folder'">Folder Name</mat-label>
+    <input matInput type="text" [(ngModel)]="fileName">
+    <button *ngIf="fileName" matSuffix mat-icon-button aria-label="Clear" (click)="fileName=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="upload" *ngIf="dialogType === 'upload'">
+     <div class="upload-area" dragDropFile (fileDropped)="onFileDropped($event)" (click)="fileDropRef.click()" (keyup)="null">
+          Drag Drop file here <br>
+          or click to browse files
+          <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($any($event).target.files)" hidden />
+     </div>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial *ngIf="!!fileName">Create</button>
+</mat-dialog-actions>
