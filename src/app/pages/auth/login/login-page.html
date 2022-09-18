@@ -21,7 +21,7 @@
         </p>
         <mat-checkbox color='primary' formControlName="rememberme"  *ngIf="!forgotpassword">Remember Me</mat-checkbox>
         <div class="button">
-          <button type="submit" mat-button  *ngIf="!forgotpassword">Login</button>
+          <button type="submit" mat-button  *ngIf="!forgotpassword" routerLink="/tools">Login</button>
           <button type="submit" mat-button  *ngIf="forgotpassword">Submit</button>
         </div>
 

@@ -21,7 +21,7 @@
       <div class="workspace-list">
         <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)">
           <mat-grid-tile>
-            <mat-card class="example-card">
+            <mat-card class="example-card" routerLink="<workspace-id>">
               <mat-card-title>Workspace 1
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                 <mat-icon>more_vert</mat-icon>
