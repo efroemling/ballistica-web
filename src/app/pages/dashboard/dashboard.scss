@@ -1,0 +1,52 @@
+
+.account{
+  // margin:30px;
+  display: flex;
+  // justify-content: flex-end;
+  border:1px solid;
+  padding: 8px;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  padding-top: 90px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  mat-card{
+    padding: 89px;
+    margin: 10px 30px;
+    text-align: center;
+  }
+}
+
+.recents{
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
+.second-container{
+  width: 90%;
+  margin: auto;
+  padding: 69px 0px;
+  text-align: center;
+}
+app-carousel {
+  min-width: 38%;
+}
+.carousel-item {
+  margin-right: 29px;
+}
+/**
+  * Rules for when the device is detected to be a small screen.
+  */
+  @media (max-width: 720px) {
+    .container {
+      flex-direction: column;
+    }
+    .container{
+      mat-card{
+        padding: 46px;
+      }
+    }
+
+  }

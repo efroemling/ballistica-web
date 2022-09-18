@@ -1,0 +1,42 @@
+
+<!-- <div class="account">
+  <button mat-stroked-button [matMenuTriggerFor]="menu">v2.HeySmoothy</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Account Settings</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+</div> -->
+<main>
+  <div class="container">
+    <mat-card routerLink="workspace">Workspace</mat-card>
+    <mat-card>Asset Packages</mat-card>
+    <mat-card>Live Console</mat-card>
+  </div>
+
+  <div class="second-container">
+    <mat-divider ></mat-divider>
+    <h5>Recents</h5>
+  <div class="recents">
+    <app-carousel [aria-label]="'Featured components'">
+      <mat-card *ngFor="let item of getRecents()" carousel-item
+           class="carousel-item featured-components-carousel-item">
+        <mat-card-subtitle>
+          {{item['type']}}
+        </mat-card-subtitle>
+        <mat-card-content>
+          {{item['title']}}
+        </mat-card-content>
+      </mat-card>
+    </app-carousel>
+  </div>
+  </div>
+
+</main>
+
+<!-- <a *ngFor="let item of getRecents()" carousel-item
+         class="carousel-item featured-components-carousel-item"
+         >
+        <h2>{{item['title']}}</h2>
+        <h5>{{item['date']}}</h5>
+        <p>{{item['type']}}</p>
+      </a> -->

@@ -1,0 +1,15 @@
+@use '../styles/constants';
+
+ballistica-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}

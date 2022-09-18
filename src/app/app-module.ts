@@ -3,11 +3,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
-import {MaterialDocsApp} from './material-docs-app';
+import {BallisticaApp} from './ballistica-app';
+import { Layout } from './shared/layout/layout';
 import {MATERIAL_DOCS_ROUTES} from './routes';
 import {NavBarModule} from './shared/navbar';
+import {SidenavListModule} from './shared/navbar/sidenav-list/sidenav-list';
 import {CookiePopupModule} from './shared/cookie-popup/cookie-popup-module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -20,9 +25,13 @@ import {CookiePopupModule} from './shared/cookie-popup/cookie-popup-module';
     }),
     NavBarModule,
     CookiePopupModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    SidenavListModule,
+    HttpClientModule
   ],
-  declarations: [MaterialDocsApp],
+  declarations: [BallisticaApp,Layout],
   providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
-  bootstrap: [MaterialDocsApp],
+  bootstrap: [BallisticaApp],
 })
 export class AppModule {}

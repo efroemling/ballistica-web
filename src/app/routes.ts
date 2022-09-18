@@ -1,7 +1,4 @@
 import {Routes} from '@angular/router';
-import {
-  CanActivateComponentSidenav
-} from './pages/component-sidenav/component-sidenav-can-load-guard';
 
 export const MATERIAL_DOCS_ROUTES: Routes = [
   {
@@ -9,30 +6,29 @@ export const MATERIAL_DOCS_ROUTES: Routes = [
     pathMatch: 'full',
     loadChildren: () => import('./pages/homepage').then(m => m.HomepageModule)
   },
-  {path: 'categories', redirectTo: '/components/categories'},
-  {path: 'cdk', pathMatch: 'full', redirectTo: '/cdk/categories'},
-  {path: 'components', pathMatch: 'full', redirectTo: '/components/categories'},
   {
-    path: 'guides',
-    loadChildren: () => import('./pages/guide-list').then(m => m.GuideListModule)
+    path:'account',
+    pathMatch: 'full',
+    loadChildren: ()=> import('./pages/account/account').then(m =>m.AccountModule)
   },
-  // Since https://github.com/angular/components/pull/9574, the cdk-table guide became the overview
-  // document for the cdk table. To avoid any dead / broken links, we redirect to the new location.
-  {path: 'guide/cdk-table', redirectTo: '/cdk/table/overview'},
   {
-    path: 'guide/:id',
-    loadChildren: () => import('./pages/guide-viewer').then(m => m.GuideViewerModule)
+    path:'auth',
+    pathMatch: 'prefix',
+    loadChildren: ()=> import('./pages/auth/auth').then(m =>m.AuthModule)
   },
-  // Needs to be defined before `:section` so it gets picked first when redirecting a missing page.
+  {
+    path:'tools',
+    pathMatch:'full',
+    loadChildren: ()=> import('./pages/dashboard/dashboard').then(m=>m.DashboardModule)
+  },
+  {
+    path:'tools/workspace',
+    pathMatch:'prefix',
+    loadChildren: ()=> import('./pages/workspace/workspace').then(m=>m.WorkspaceModule)
+  },
   {
     path: '404',
     loadChildren: () => import('./pages/not-found').then(m => m.NotFoundModule)
-  },
-  {
-    path: ':section',
-    canActivate: [CanActivateComponentSidenav],
-    loadChildren: () =>
-      import('./pages/component-sidenav/component-sidenav').then(m => m.ComponentSidenavModule)
   },
   {path: 'wiki', redirectTo: 'https://github.com/efroemling/ballistica'},
 

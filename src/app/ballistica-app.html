@@ -1,0 +1,16 @@
+<app-cookie-popup></app-cookie-popup>
+<!-- <app-navbar class="mat-elevation-z6"></app-navbar>-->
+<app-layout>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-navbar (sidenavToggle)="sidenav.toggle()"></app-navbar>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</app-layout>
+

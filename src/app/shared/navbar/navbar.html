@@ -1,42 +1,41 @@
-<!-- TODO: figure out if the <nav> should go inside of a <header> element. -->
-<nav class="docs-navbar-header" aria-label="Top Toolbar"
-     [class.is-next-version]="isNextVersion">
-  <div class="skip-link-wrapper" [class.cdk-visually-hidden]="skipLinkHidden" *ngIf="skipLinkHref">
-    <a mat-raised-button [href]="skipLinkHref" (focus)="skipLinkHidden = false" (blur)="skipLinkHidden = true" color="accent">
-      Skip to main content
-    </a>
+<mat-toolbar color="primary" class="ba-toolbar">
+  <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>menu</mat-icon>
+      </button>
   </div>
-  <a mat-button class="docs-button" routerLink="/" aria-label="Ballistica">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/angular-white-transparent.svg"
-         alt="ballistica">
-    <span>Ballistica</span>
-  </a>
-  <a mat-button class="docs-navbar-hide-small docs-button"
-     *ngFor="let key of sectionKeys"
-     [routerLink]="key"
-     routerLinkActive="docs-navbar-header-item-selected">{{sections[key].name}}</a>
-  <a mat-button *ngIf="shouldShowTestStuff()" class="docs-navbar-hide-small docs-button" routerLink="guides" routerLinkActive="docs-navbar-header-item-selected">Guides</a>
-  <div class="flex-spacer"></div>
-<!--  <version-picker></version-picker>-->
-  <theme-picker *ngIf="shouldShowTestStuff()"></theme-picker>
-  <a mat-button class="docs-button docs-navbar-hide-small" href="{{gitHubUrl}}"
-     aria-label="GitHub Repository">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
-         alt="github">
-    GitHub
-  </a>
-  <a mat-icon-button class="docs-button docs-navbar-show-small"
-     href="{{gitHubUrl}}" aria-label="GitHub Repository">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
-         alt="github">
-  </a>
-</nav>
-<nav class="docs-navbar docs-navbar-show-small" aria-label="Section Nav Bar">
-  <a mat-button class="docs-navbar-link"
-    *ngFor="let key of sectionKeys"
-    [routerLink]="key">{{sections[key].name}}</a>
-  <a mat-button *ngIf="shouldShowTestStuff()" class="docs-navbar-link" routerLink="guides">Guides</a>
-</nav>
+  <div class="logo">
+    <img src="../../../assets/img//ballistica logo.png" alt="ballistica">
+      <a routerLink=""> Ballistica</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout  class="navigation-items">
+
+          <li *ngIf="shouldShowTestStuff()">
+            <theme-picker></theme-picker></li>
+          <li>
+            <a routerLink="auth/login" routerLinkActive="router-link-active">Login</a>
+          </li>
+          <li>
+              <a href="https://docs.ballistica.net/api7/">Docs</a>
+          </li>
+          <li>
+            <a mat-icon-button class="docs-button docs-navbar-show-small"
+                href="{{gitHubUrl}}" aria-label="GitHub Repository">
+              <img class="docs-angular-logo"
+                    src="../../../assets/img/homepage/github-circle-white-transparent.svg"
+                    alt="github">
+            </a>
+          </li>
+          <li>
+            <div class="account">
+              <button [matMenuTriggerFor]="menu">v2.HeySmoothy</button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="account">Account Settings</button>
+                <button mat-menu-item>Logout</button>
+              </mat-menu>
+            </div>
+          </li>
+      </ul>
+  </div>
+</mat-toolbar>

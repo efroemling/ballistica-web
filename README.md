@@ -1,4 +1,5 @@
 # Ballistica Web Front-End
+[![build status](https://github.com/efroemling/ballistica-web/workflows/Build/badge.svg)](https://github.com/efroemling/ballistica-web/actions)
 
 This will hopefully mutate into a useful toolset for Ballistica related functionality (wrangling mods, cloud hosting, asset packages, etc). For now though it is largely just me learning Angular/Material.
 

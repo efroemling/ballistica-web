@@ -1,19 +1,17 @@
-import {Component, NgModule, OnDestroy} from '@angular/core';
+import {Component, EventEmitter, NgModule, OnDestroy, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import {RouterModule} from '@angular/router';
-import {ThemePickerModule} from '../theme-picker';
 // import {VersionPickerModule} from '../version-picker';
-import {SECTIONS} from '../documentation-items/documentation-items';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
 import {StyleManager} from '../style-manager';
-import {HttpClientModule} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {NavigationFocusService} from '../navigation-focus/navigation-focus.service';
 import {environment} from '../../../environments/environment';
-
-const SECTIONS_KEYS = environment.production ? [] : Object.keys(SECTIONS);
+import { ThemePickerModule } from '../theme-picker';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +19,9 @@ const SECTIONS_KEYS = environment.production ? [] : Object.keys(SECTIONS);
   styleUrls: ['./navbar.scss']
 })
 export class NavBar implements OnDestroy {
+
+  @Output() public sidenavToggle = new EventEmitter();
+
   gitHubUrl = 'https://github.com/efroemling/ballistica';
 
   private subscriptions = new Subscription();
@@ -32,14 +33,6 @@ export class NavBar implements OnDestroy {
     setTimeout(() => this.skipLinkHref = this.navigationFocusService.getSkipLinkHref(), 100);
   }
 
-  get sections() {
-    return SECTIONS;
-  }
-
-  get sectionKeys() {
-    return SECTIONS_KEYS;
-  }
-
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }
@@ -48,17 +41,21 @@ export class NavBar implements OnDestroy {
     return !environment.production;
   }
 
+  onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+  };
+
 }
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatMenuModule,
     RouterModule,
-    ThemePickerModule,
-    // VersionPickerModule,
+    MatIconModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatMenuModule,
+    ThemePickerModule
   ],
   exports: [NavBar],
   declarations: [NavBar],

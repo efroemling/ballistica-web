@@ -1,0 +1,77 @@
+<main class="container">
+  <div class="column">
+    <div class="info">
+      <h1>Workspaces</h1>
+      <p>Workspaces are collections of scripts stored with your account. They allow you to easily mod the game on any platform. <br> To lean more, check out the <a href="">Workspaces Documentation</a></p>
+    </div>
+    <div class="my-workspace">
+      <h3>My Workspaces</h3>
+      <div class="row">
+        <button mat-raised-button color="primary" > + New Workspace</button>
+        <div class="syncing-options">
+          Syncing :  Workspace 1
+          <button mat-button [matMenuTriggerFor]="menu">change</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </div>
+      </div>
+
+      <div class="workspace-list">
+        <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)">
+          <mat-grid-tile>
+            <mat-card class="example-card" routerLink="<workspace-id>">
+              <mat-card-title>Workspace 1
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+                </button>
+              </mat-card-title>
+              <mat-card-subtitle>Modified 3 days ago</mat-card-subtitle>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-title>Workspace 1
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                  </button>
+              </mat-card-title>
+              <mat-card-subtitle>Modified 3 days ago</mat-card-subtitle>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-title>Workspace 1
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+                </button>
+              </mat-card-title>
+              <mat-card-subtitle>Modified 3 days ago</mat-card-subtitle>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-title>Workspace 1
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+                </button>
+              </mat-card-title>
+              <mat-card-subtitle>Modified 3 days ago</mat-card-subtitle>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card class="example-card">
+              <mat-card-title>Workspace 1
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+                </button>
+              </mat-card-title>
+              <mat-card-subtitle>Modified 3 days ago</mat-card-subtitle>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</main>

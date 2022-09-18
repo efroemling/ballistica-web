@@ -2,16 +2,15 @@
 $margin-promotion-sections: 50px;
 $margin-promotion-sections-small: 15px;
 
-.docs-header-background {
+.header-background {
   overflow: hidden;
   position: relative;
   height: 420px;
 }
 
-.docs-header-background::before {
+.header-background::before {
   content: '';
   position: absolute;
-  background-image: url('../../../assets/img/homepage/angular-white-transparent.svg');
   background-size: 600px;
   top: 0;
   bottom: 0;
@@ -22,7 +21,7 @@ $margin-promotion-sections-small: 15px;
   opacity: 0.2;
 }
 
-.docs-header-section {
+.header-section {
   width: 90%;
   position: absolute;
   z-index: 0;
@@ -32,7 +31,7 @@ $margin-promotion-sections-small: 15px;
   transform: translate(-50%, -50%);
 }
 
-.docs-header-headline {
+.header-headline {
   h1 {
     font-size: 56px;
     font-weight: bold;
@@ -48,7 +47,7 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-homepage-promo {
+.homepage-promo {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -84,7 +83,11 @@ $margin-promotion-sections-small: 15px;
     vertical-align: middle;
   }
 }
-
+.introduction{
+    line-height: 1.6;
+    word-spacing: 3px;
+    padding: 20px 0px;
+}
 .carousel-item {
   width: 48%;
 
@@ -97,13 +100,13 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-homepage-row {
+.homepage-row {
   display: flex;
   flex-direction: row;
   margin: $margin-promotion-sections 0;
 }
 
-.docs-homepage-carousel-row {
+.homepage-carousel-row {
   margin: $margin-promotion-sections 0;
   display: flex;
   flex-direction: column;
@@ -114,7 +117,7 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-homepage-header {
+.homepage-header {
   display: flex;
   width: 100%;
   align-items: center;
@@ -126,19 +129,19 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-link {
+.link {
   display: inline-flex;
   align-items: center;
 }
 
-.docs-homepage-guides {
-  .docs-homepage-guides-card-divider {
+.homepage-guides {
+  .homepage-guides-card-divider {
     width: 30%;
     height: 5px;
     margin: 15px auto;
   }
 
-  .docs-homepage-guides-carousel-item {
+  .homepage-guides-carousel-item {
     display: flex;
     text-decoration: none;
     box-sizing: border-box;
@@ -153,11 +156,11 @@ $margin-promotion-sections-small: 15px;
     }
   }
 
-  .docs-homepage-guides-card.mat-card {
+  .homepage-guides-card.mat-card {
     text-align: center;
   }
 
-  .docs-homepage-guides-card .mat-card-title {
+  .homepage-guides-card .mat-card-title {
     height: 35%;
     display: flex;
     align-items: center;
@@ -166,13 +169,13 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-homepage-featured-components {
-  .docs-featured-components-carousel-item {
+.homepage-featured-components {
+  .featured-components-carousel-item {
     text-align: center;
     box-sizing: border-box;
     font-size: 18px;
 
-    .docs-homepage-img-container {
+    .homepage-img-container {
       overflow: hidden;
       margin-bottom: 16px;
       max-height: 200px;
@@ -191,7 +194,7 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-homepage-row-column {
+.homepage-row-column {
   display: flex;
   flex-direction: column;
   width: 32%;
@@ -201,7 +204,7 @@ $margin-promotion-sections-small: 15px;
   }
 }
 
-.docs-header-start {
+.header-start {
   text-align: center;
   margin: $margin-promotion-sections 0 0 0;
 
@@ -211,24 +214,24 @@ $margin-promotion-sections-small: 15px;
 }
 
 @media (max-width: 1200px) {
-  .docs-header-background {
+  .header-background {
     height: 330px;
   }
-  .docs-header-background:before {
+  .header-background:before {
     background-image: none;
   }
 }
 
 @media (max-width: 850px) {
 
-  .docs-header-background:before {
+  .header-background:before {
     background-image: none;
   }
-  .docs-introduction {
+  .introduction {
     flex-direction: column;
   }
 
-  .docs-homepage-row-column {
+  .homepage-row-column {
     width: 100%;
 
     & + & {
@@ -241,11 +244,11 @@ $margin-promotion-sections-small: 15px;
   * Rules for when the device is detected to be a small screen.
   */
 @media (max-width: 720px) {
-  .docs-header-start {
+  .header-start {
     margin: $margin-promotion-sections-small 0 0 0;
   }
 
-  .docs-homepage-row, .docs-homepage-carousel-row {
+  .homepage-row, .homepage-carousel-row {
     margin: $margin-promotion-sections-small 0;
   }
 }
